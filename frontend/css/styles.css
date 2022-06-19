@@ -4515,7 +4515,6 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
 .card > hr {
@@ -11355,8 +11354,62 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
       background-color: #d6f0ff;
     }
     .shadowiv {
-        text-shadow: 0.05em 0.05em 0.06em black
+        text-shadow: 
+              2.8px 2.8px 2.2px rgba(0, 0, 0, 0.059),
+              6.7px 6.7px 5.3px rgba(0, 0, 0, 0.082),
+              12.5px 12.5px 10px rgba(0, 0, 0, 0.097),
+              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.109),
+              41.8px 41.8px 33.4px rgba(0, 0, 0, 0.118),
+              100px 100px 80px rgba(0, 0, 0, 0.13)
+
     }
+    
+    .shadowboxiv {
+    
+        box-shadow:
+          1.6px 1.6px 1.2px rgba(0, 0, 0, 0.022),
+          3.4px 3.4px 2.7px rgba(0, 0, 0, 0.031),
+          5.8px 5.8px 4.6px rgba(0, 0, 0, 0.036),
+          8.7px 8.7px 6.9px rgba(0, 0, 0, 0.04),
+          12.5px 12.5px 10px rgba(0, 0, 0, 0.044),
+          17.7px 17.7px 14.2px rgba(0, 0, 0, 0.049),
+          25.1px 25.1px 20.1px rgba(0, 0, 0, 0.055),
+          36.5px 36.5px 29.2px rgba(0, 0, 0, 0.065),
+          56.3px 56.3px 45px rgba(0, 0, 0, 0.081),
+          100px 100px 80px rgba(0, 0, 0, 0.14)
+;
+
+    
+    }
+    
+    .textblack {
+    
+        color: black
+    
+    }
+    
+    .gradient-custom-2 {
+        /* fallback for old browsers */
+        background: #fccb90;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, #70ffff 0, #7effff 25%, #7ccdfc 50%, #6f97b4 75%, #5b6876 100%);
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, #7fe5ff 0, #7ccdfc 50%, #77b6dd 100%);
+        }
+
+        @media (min-width: 768px) {
+        .gradient-form {
+        height: 100vh !important;
+        }
+        }
+        @media (min-width: 769px) {
+        .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        }
+        }
 
     
 }
