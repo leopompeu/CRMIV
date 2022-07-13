@@ -17,7 +17,7 @@ import com.crmiv.models.Consultores;
 import com.crmiv.repository.ConsultoresRepository;
 
 @RestController
-@RequestMapping("/api/consultor")
+@RequestMapping("/consultor")
 public class ConsultoresController {
 	
 	private final ConsultoresRepository cr;
