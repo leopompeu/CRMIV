@@ -1,9 +1,12 @@
 package com.crmiv.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +15,7 @@ import com.crmiv.repository.LeedsRepository;
 
 @RequestMapping("/api/leed")
 @RestController
+@CrossOrigin(origins = "*")
 public class LeedController {
 	
 	private final LeedsRepository lr;
@@ -24,6 +28,11 @@ public class LeedController {
 	@GetMapping("/listarTodos")
 	public ResponseEntity<List<Leeds>> listarTodos(){
 		return ResponseEntity.ok(lr.findAll());
+	}
+	
+	@GetMapping("/listarLeed/{id}")
+	public Optional<Leeds> listaLeed(@PathVariable(value="id") Integer id){
+		return lr.findById(id);
 	}
 
 }
