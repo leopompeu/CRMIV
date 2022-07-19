@@ -45,7 +45,8 @@ public class ConsultoresController {
 	}
 	
 	@GetMapping("/logar")
-	public ResponseEntity<Boolean> logar(@RequestParam String login, @RequestParam String senha){
+	public ResponseEntity<Boolean> logar(@RequestParam String login, 
+										 @RequestParam String senha){
 		
 		Optional<Consultores> optConsultores = cr.findByLogin(login);
 		if(optConsultores.isEmpty()) {

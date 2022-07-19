@@ -10,30 +10,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.crmiv.models.Observacoes;
-import com.crmiv.repository.ObservacoesRepository;
+import com.crmiv.models.Enderecos;import com.crmiv.repository.EnderecosRepository;
 
-@RequestMapping("/observacoes")
+@RequestMapping("/enderecos")
 @RestController
 @CrossOrigin(origins = "*")
-public class ObservacaoController {
+public class EnderecosController {
+
+	private final EnderecosRepository er;
 	
-	private final ObservacoesRepository or;
-
-	public ObservacaoController(
-			ObservacoesRepository or) {
-		this.or = or;
-	}
-
-	@GetMapping("/listarObs/{id}")
-	public Optional<Observacoes> listaObservacoes(@PathVariable(value="id") Integer id){
-		return or.findById(id);
+	public EnderecosController(EnderecosRepository er){
+		this.er = er;
 	}
 	
-	@PostMapping("/salvaObs")
-	public Observacoes salvaObs (@RequestBody Observacoes obs) {
-		return or.save(obs);
+	@GetMapping("/listarEndereco/{id}")
+	public Optional<Enderecos> listaEndereco(@PathVariable(value="id") Integer id){
+		return er.findById(id);
 	}
-
-
+	
+	@PostMapping("/salvaEndereco")
+	public Enderecos salvaEndereco(@RequestBody Enderecos endereco) {
+		return er.save(endereco);
+	}
 }

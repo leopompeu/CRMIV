@@ -37,7 +37,9 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception{
         http.cors().and().csrf().disable()
 	        .authorizeRequests()
-		        .antMatchers(HttpMethod.POST, "/consultor/logar")
+		        .antMatchers(HttpMethod.POST, "/login")
+		        	.permitAll()
+		        .antMatchers(HttpMethod.GET, "/consultor/logar")
 		        	.permitAll()
 		        .antMatchers(HttpMethod.POST, "/consultor/cadastrar")
 		        	.permitAll()

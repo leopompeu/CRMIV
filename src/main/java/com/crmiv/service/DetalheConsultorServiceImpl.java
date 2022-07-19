@@ -24,7 +24,7 @@ public class DetalheConsultorServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<Consultores> consultor = cr.findByLogin(username);
 		if (consultor.isEmpty()) {
-			throw new UsernameNotFoundException("O campo usuário não pode estar em branco");
+			throw new UsernameNotFoundException("Usuário '" + username + "' não encontrado");
 		}
 		
 		return new DetalheConsultorData(consultor);
